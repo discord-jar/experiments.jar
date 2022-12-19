@@ -13,7 +13,7 @@ Here's a simple guide on using this library:
 import com.seailz.experiments.DiscordExperiments;
 
 ...
-List<DiscordExperiments> exp = DiscordExperiments.getExperiments();
+List<GuildExperiment> exp = DiscordExperiments.getExperiments();
 ```
 and that's it!
 
