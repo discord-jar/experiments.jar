@@ -2,7 +2,7 @@
 DiscordExperiments is a tool that decodes the information from the experiements endpoint of the Discord API automatically and turns it into Java objects.
 
 ## Usage
-When using the libraru, I'd appreciate if you could leave a piece of credit to this repositiory somewhere on your site/application!
+When using the library, I'd appreciate if you could leave a piece of credit to this repositiory somewhere on your site/application!
 
 ## Documentation
 ### Maven
