@@ -2,9 +2,46 @@
 DiscordExperiments is a tool that decodes the information from the experiements endpoint of the Discord API automatically and turns it into Java objects.
 
 ## Usage
-When using the libraru, I'd appreciate if you could leave a piece of credit to this repositiory somewhere on your site/application!
+When using the library, I'd appreciate if you could leave a piece of credit to this repositiory somewhere on your site/application!
 
 ## Documentation
+### Maven
+Repository:
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+```
+
+Dependency:
+```xml
+<dependency>
+  <groupId>com.github.seailz</groupId>
+  <artifactId>discordexperiments</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+
+### Gradle
+Repository:
+```gradle
+allprojects {
+  repositories {
+	maven { url 'https://jitpack.io' }
+	}
+}
+```
+
+Dependency:
+```gradle
+dependencies {
+  implementation 'com.github.seailz:discordexperiments:1.0'
+}
+```  
+
 Here's a simple guide on using this library:
 
 - Call the `DiscordExperiments#getExperiments` method.
@@ -13,7 +50,7 @@ Here's a simple guide on using this library:
 import com.seailz.experiments.DiscordExperiments;
 
 ...
-List<DiscordExperiments> exp = DiscordExperiments.getExperiments();
+List<GuildExperiment> exp = DiscordExperiments.getExperiments();
 ```
 and that's it!
 
