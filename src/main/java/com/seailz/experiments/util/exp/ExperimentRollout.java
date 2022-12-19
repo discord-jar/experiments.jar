@@ -6,16 +6,16 @@ import org.json.JSONObject;
 
 public class ExperimentRollout {
 
-    public int id;
-    public int start;
-    public int end;
-    public int percentage;
-    public boolean enabled;
-    public OverrideFilter filter;
+    private int id;
+    private final int start;
+    private final int end;
+    private final int percentage;
+    private final boolean enabled;
+    private OverrideFilter filter;
 
     public ExperimentRollout(GuildExperiment experiment, int id) {
         JSONArray mainDataArray =
-                experiment.raw.getJSONArray(3)
+                experiment.getRaw().getJSONArray(3)
                         .getJSONArray(id);
 
         JSONArray rolloutArray = mainDataArray.getJSONArray(0)
@@ -58,6 +58,26 @@ public class ExperimentRollout {
         json.put("percentage", percentage);
         json.put("enabled", enabled);
         return json;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getEnd() {
+        return end;
+    }
+
+    public int getPercentage() {
+        return percentage;
+    }
+
+    public int getStart() {
+        return start;
+    }
+
+    public OverrideFilter getFilter() {
+        return filter;
     }
 
 }

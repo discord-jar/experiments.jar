@@ -10,14 +10,14 @@ import java.util.List;
 
 public class GuildExperiment {
 
-    public String name;
-    public String niceName;
-    public int year;
-    public int month;
-    public JSONArray raw;
-    public List<ExperimentOverride> overrides;
-    public List<String> overriddenGuilds;
-    private List<ExperimentRollout> treatments;
+    private final String name;
+    private final String niceName;
+    private int year;
+    private int month;
+    private final JSONArray raw;
+    private final List<ExperimentOverride> overrides;
+    private List<String> overriddenGuilds;
+    private final List<ExperimentRollout> treatments;
 
     public GuildExperiment(JSONArray rawGuildExperiment) {
         this.name = rawGuildExperiment.getString(1);
@@ -42,7 +42,8 @@ public class GuildExperiment {
         try {
             overrideCount = raw.getJSONArray(5)
                     .getJSONArray(0).length();
-        } catch (JSONException ignored) {}
+        } catch (JSONException ignored) {
+        }
 
         for (int i = 0; i < overrideCount; i++) {
             ExperimentOverride experimentOverride = new ExperimentOverride(this, i);
@@ -55,7 +56,8 @@ public class GuildExperiment {
         int treatmentCount = 0;
         try {
             treatmentCount = raw.getJSONArray(3).length();
-        } catch (JSONException ignored) {}
+        } catch (JSONException ignored) {
+        }
 
         for (int i = 0; i < treatmentCount; i++) {
             ExperimentRollout experimentRollout = new ExperimentRollout(this, i);
@@ -73,7 +75,8 @@ public class GuildExperiment {
                 }
                 this.overriddenGuilds = overrideGuilds;
             }
-        } catch (JSONException ignored) {}
+        } catch (JSONException ignored) {
+        }
 
     }
 
@@ -110,4 +113,35 @@ public class GuildExperiment {
         return json;
     }
 
+    public int getMonth() {
+        return month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public JSONArray getRaw() {
+        return raw;
+    }
+
+    public List<ExperimentOverride> getOverrides() {
+        return overrides;
+    }
+
+    public List<ExperimentRollout> getTreatments() {
+        return treatments;
+    }
+
+    public List<String> getOverriddenGuilds() {
+        return overriddenGuilds;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getNiceName() {
+        return niceName;
+    }
 }

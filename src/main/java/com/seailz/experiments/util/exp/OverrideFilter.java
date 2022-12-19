@@ -7,8 +7,8 @@ import java.util.List;
 
 public class OverrideFilter {
 
-    public List<Object> flags;
-    public List<Object> guildIds;
+    private List<Object> flags;
+    private List<Object> guildIds;
 
     public OverrideFilter(JSONArray filterRaw) {
         switch (String.valueOf(filterRaw.get(0))) {
@@ -28,4 +28,11 @@ public class OverrideFilter {
         return json;
     }
 
+    public List<Object> getFlags() {
+        return flags;
+    }
+
+    public List<Object> getGuildIds() {
+        return guildIds;
+    }
 }

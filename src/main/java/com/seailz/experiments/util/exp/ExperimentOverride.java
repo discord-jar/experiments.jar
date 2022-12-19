@@ -17,7 +17,7 @@ public class ExperimentOverride {
     public ExperimentOverride(GuildExperiment experiment, int next) {
         this.experiment = experiment;
 
-        JSONArray mainDataArray = experiment.raw.getJSONArray(5)
+        JSONArray mainDataArray = experiment.getRaw().getJSONArray(5)
                 .getJSONArray(0)
                 .getJSONArray(next);
 
@@ -38,6 +38,14 @@ public class ExperimentOverride {
                 .getJSONArray(0);
 
         ovFilter = new OverrideFilter(filter);
+
+        int percentage;
+        if (this.start == 0 && this.end == 10000) {
+            percentage = 100;
+        } else {
+            percentage = (int) Math.round((this.end - this.start) / 100.0);
+        }
+        this.percentage = percentage;
     }
 
     public JSONObject toJson() {
@@ -50,6 +58,28 @@ public class ExperimentOverride {
         return json;
     }
 
+    public int getStart() {
+        return start;
+    }
 
+    public int getPercentage() {
+        return percentage;
+    }
+
+    public int getEnd() {
+        return end;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public GuildExperiment getExperiment() {
+        return experiment;
+    }
+
+    public OverrideFilter getOvFilter() {
+        return ovFilter;
+    }
 
 }
