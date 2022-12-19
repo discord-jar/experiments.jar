@@ -39,7 +39,8 @@ public class ExperimentRollout {
             this.filter = null;
         }
 
-        this.percentage = start / 100;
+        double percentage = ((double) start / (double) end) * 100;
+        this.percentage = (int) percentage;
     }
 
     public JSONObject toJson() {
