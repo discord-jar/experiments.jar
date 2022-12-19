@@ -39,13 +39,7 @@ public class ExperimentOverride {
 
         ovFilter = new OverrideFilter(filter);
 
-        int percentage;
-        if (this.start == 0 && this.end == 10000) {
-            percentage = 100;
-        } else {
-            percentage = (int) Math.round((this.end - this.start) / 100.0);
-        }
-        this.percentage = percentage;
+        this.percentage = start / 100;
     }
 
     public JSONObject toJson() {
