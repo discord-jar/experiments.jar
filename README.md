@@ -21,3 +21,4 @@ and that's it!
 # REST API
 Because I know not everyone uses Java, I'm also offering a REST API that allows you to retrieve simplified JSON data instead of the complicated JSON data you'd normally get from `https://discord.com/api/v10/experiments?with_guild_experiments=true`.
 Here's some more info:
+**COMING SOON**
