@@ -39,7 +39,8 @@ public class ExperimentOverride {
 
         ovFilter = new OverrideFilter(filter);
 
-        this.percentage = start / 100;
+        double percentage = ((double) start / (double) end) * 100;
+        this.percentage = (int) percentage;
     }
 
     public JSONObject toJson() {
@@ -48,7 +49,7 @@ public class ExperimentOverride {
         json.put("filter", ovFilter.toJson());
         json.put("start", start);
         json.put("end", end);
-        //json.put("percentage", percentage);
+        json.put("percentage", percentage);
         return json;
     }
 
